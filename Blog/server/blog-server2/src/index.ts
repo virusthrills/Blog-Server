@@ -5,8 +5,7 @@ import { connectToDb } from "./config/db";
 import userRouter from "./api/routes";
 
 const app = express();
-const port = process.env.port || 10000; app.listen(port, '0.0.0.0');
-
+const port = Number(process.env.PORT) || 10000;
 
 app.use((req, res, next) => {
   const startedAt = Date.now();
@@ -33,7 +32,7 @@ app.use((_req, res) => {
 });
 
 void connectToDb().then(() => {
-  app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on http://0.0.0.0:${port}`);
   });
 });
