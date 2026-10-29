@@ -5,7 +5,8 @@ import { connectToDb } from "./config/db";
 import userRouter from "./api/routes";
 
 const app = express();
-const port = 9000;
+const port = process.env.port || 10000; app.listen(port, '0.0.0.0');
+
 
 app.use((req, res, next) => {
   const startedAt = Date.now();
