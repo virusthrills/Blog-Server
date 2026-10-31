@@ -17,7 +17,7 @@ const userRouter = Router();
 
 userRouter.get("/user", getAllUsers);
 // userRouter.post("/up", upload.single("image"), uploadCloudinary);
-userRouter.post("/test", register);
+userRouter.post("/register", register);
 userRouter.post("/login", login);
 userRouter.post("/refresh-token", refreshToken);
 userRouter.post("/logout", logout);
